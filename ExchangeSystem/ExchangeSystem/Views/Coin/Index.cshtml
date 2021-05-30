@@ -1,0 +1,38 @@
+﻿@model ExchangeSystem.Models.CoinViewModel
+
+
+<h1>Exchange System</h1>
+<br />
+<div class="container">
+    <form asp-controller="Coin" asp-action="Send" method="post">
+        <!-- Input and Submit elements -->
+        <div class="row">
+            <div class="offset-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Trade" aria-describedby="basic-addon1" asp-for="InputValue">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="input-group mb-3">
+
+                    <select class="form-select" aria-label="Default select example" asp-for="CurrentCurrency" asp-items="@ViewBag.TypesCoin"> </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="To" aria-describedby="basic-addon1" readonly asp-for="ConversionValue">
+                </div>
+            </div>
+            <div class="col-4">
+                <select class="form-select" aria-label="Default select example" asp-for="CurrencyConversion" asp-items="@ViewBag.TypesCoin"> </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-3">
+                <input type="submit" class="btn btn-primary" value="Send" />
+            </div>
+        </div>
+    </form>
+</div>
